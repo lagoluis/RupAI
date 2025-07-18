@@ -5,7 +5,7 @@ Task List
 See prompt P01_INIT below.
 	✓	P02_ASSET – Build asset-upload module (create_asset, upload_asset)
 See prompt P02_ASSET.
-	•	P03_GEN – Build generation module (start_generation, model-ID helper)
+	✓	P03_GEN – Build generation module (start_generation, model-ID helper)
 See prompt P03_GEN.
 	•	P04_POLL – Build polling / downloader module (wait_and_download)
 See prompt P04_POLL.
