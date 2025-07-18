@@ -9,6 +9,7 @@ from rich.console import Console
 from hedra_avatar.core.assets import create_asset, upload_asset
 from hedra_avatar.core.generation import start_generation
 from hedra_avatar.core.poll import wait_and_download
+from hedra_avatar.core.utils import get_credit_balance, retry
 
 console = Console()
 
@@ -48,6 +49,13 @@ class Watcher:
     def process_file(self, wav_path: Path):
         try:
             console.log(f"Processing new file: {wav_path.name}")
+
+            console.log("Checking credit balance...")
+            balance = get_credit_balance(self.api_key)
+            if balance < 1:
+                console.log(f"[bold red]Error: Insufficient credits. Current balance: {balance}[/bold red]")
+                return
+            console.log(f"Current credit balance: {balance}")
 
             console.log("Creating audio asset...")
             audio_asset_id = create_asset(wav_path.name, "audio", self.api_key)

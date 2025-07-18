@@ -3,7 +3,9 @@ from pathlib import Path
 from typing import Literal
 
 import requests
+from hedra_avatar.core.utils import retry
 
+@retry(requests.exceptions.RequestException)
 def create_asset(name: str, kind: Literal['image', 'audio'], api_key: str) -> str:
     """Creates a new asset in Hedra.
 
@@ -22,6 +24,7 @@ def create_asset(name: str, kind: Literal['image', 'audio'], api_key: str) -> st
     response.raise_for_status()
     return response.json()["id"]
 
+@retry(requests.exceptions.RequestException)
 def upload_asset(asset_id: str, file: Path, api_key: str) -> None:
     """Uploads a file to an existing asset.
 

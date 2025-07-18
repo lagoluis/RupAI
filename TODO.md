@@ -13,7 +13,7 @@ See prompt P04_POLL.
 See prompt P05_CLI.
 	✓	P06_WATCH – Add file-watcher integration
 See prompt P06_WATCH.
-	•	P07_UTIL – Error handling & credits-check utilities
+	✓	P07_UTIL – Error handling & credits-check utilities
 See prompt P07_UTIL.
 
 ⸻

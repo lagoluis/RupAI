@@ -2,11 +2,13 @@
 import os
 from pathlib import Path
 import requests
+from hedra_avatar.core.utils import retry
 
 CACHE_DIR = Path(".cache")
 CACHE_DIR.mkdir(exist_ok=True)
 MODEL_ID_CACHE = CACHE_DIR / "model_id"
 
+@retry(requests.exceptions.RequestException)
 def get_default_model_id(api_key: str) -> str:
     """Gets the default model ID from cache or Hedra API.
 
@@ -40,6 +42,7 @@ def get_default_model_id(api_key: str) -> str:
 
     raise ValueError("No suitable model found.")
 
+@retry(requests.exceptions.RequestException)
 def start_generation(
     image_id: str,
     audio_id: str,

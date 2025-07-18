@@ -3,7 +3,9 @@ import time
 from pathlib import Path
 import requests
 from tqdm import tqdm
+from hedra_avatar.core.utils import retry
 
+@retry(requests.exceptions.RequestException)
 def wait_and_download(
     generation_id: str, out_dir: Path, api_key: str, timeout: int = 300
 ) -> Path:

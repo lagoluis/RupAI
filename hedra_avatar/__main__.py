@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from hedra_avatar.core.assets import create_asset, upload_asset
 from hedra_avatar.core.generation import start_generation
 from hedra_avatar.core.poll import wait_and_download
+from hedra_avatar.core.utils import get_credit_balance
 
 def main():
     """Main CLI entry point."""
@@ -22,6 +23,13 @@ def main():
         sys.exit(1)
 
     try:
+        print("Checking credit balance...")
+        balance = get_credit_balance(api_key)
+        if balance < 1: # Assuming 1 credit is needed for a generation
+            print(f"Error: Insufficient credits. Current balance: {balance}", file=sys.stderr)
+            sys.exit(1)
+        print(f"Current credit balance: {balance}")
+
         print("Creating audio asset...")
         audio_asset_id = create_asset(args.wav.name, "audio", api_key)
         upload_asset(audio_asset_id, args.wav, api_key)
