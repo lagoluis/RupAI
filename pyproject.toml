@@ -1,0 +1,7 @@
+
+[project]
+name = "hedra-avatar"
+version = "0.1.0"
+
+[project.scripts]
+hedra-avatar = "hedra_avatar.__main__:main"

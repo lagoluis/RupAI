@@ -9,7 +9,7 @@ See prompt P02_ASSET.
 See prompt P03_GEN.
 	✓	P04_POLL – Build polling / downloader module (wait_and_download)
 See prompt P04_POLL.
-	•	P05_CLI – Build CLI entry-point
+	✓	P05_CLI – Build CLI entry-point
 See prompt P05_CLI.
 	•	P06_WATCH – Add file-watcher integration
 See prompt P06_WATCH.
