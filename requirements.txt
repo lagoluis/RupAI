@@ -4,3 +4,4 @@ tqdm
 watchdog
 requests-mock
 freezegun
+rich
