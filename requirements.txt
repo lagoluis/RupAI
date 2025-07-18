@@ -2,3 +2,4 @@ python-dotenv
 requests
 tqdm
 watchdog
+requests-mock
