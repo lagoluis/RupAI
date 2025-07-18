@@ -3,3 +3,4 @@ requests
 tqdm
 watchdog
 requests-mock
+freezegun

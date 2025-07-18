@@ -7,7 +7,7 @@ See prompt P01_INIT below.
 See prompt P02_ASSET.
 	✓	P03_GEN – Build generation module (start_generation, model-ID helper)
 See prompt P03_GEN.
-	•	P04_POLL – Build polling / downloader module (wait_and_download)
+	✓	P04_POLL – Build polling / downloader module (wait_and_download)
 See prompt P04_POLL.
 	•	P05_CLI – Build CLI entry-point
 See prompt P05_CLI.
